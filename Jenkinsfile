@@ -1,12 +1,15 @@
 pipeline {
     agent any
 
+    tools {
+        go "1.24"
+    }
+
     stages {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'ls'
-                sh 'pwd'
+                sh 'go version'
             }
         }
         stage('Test') {
